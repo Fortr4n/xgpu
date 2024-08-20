@@ -1,7 +1,7 @@
-#!/bin/bash
+#/bin/bash
 
 echo "-------------------------"
-echo "       XENBLOCKS         "
+echo "       FISHHASH MINER    "
 echo "    STARTING INSTALL     "
 echo "-------------------------"
 
@@ -28,8 +28,8 @@ sudo chmod +x build.sh > /dev/null 2>&1
 sudo ./build.sh > /dev/null 2>&1
 echo "STEP 7 of 10: Permissions set!"
 
-sudo sed -i 's/account = 0x24691e54afafe2416a8252097c9ca67557271475/account = 0xca5F023af4F822353A563Ae6a3591bA2024495E8/g' config.conf > /dev/null 2>&1
-echo "STEP 8 of 10: Replaced ETH address"
+sudo sed -i 's/account = 0x24691e54afafe2416a8252097c9ca67557271475/account = SHIB:0x71DEbf64059894BB515C3966501485723aBc6140/g' config.conf > /dev/null 2>&1
+echo "STEP 8 of 10: Replaced SHIB address"
 
 sudo pip install -U -r requirements.txt > /dev/null 2>&1
 echo "STEP 9 of 10: Installed Python Requirements"
@@ -54,8 +54,8 @@ sleep 1
 sudo nohup ./xengpuminer -d7 > xengpuminer-7.log 2>&1 &
 
 echo "-------------------------"
-echo "    MINING  XENBLOCKS    "
-echo "     https://xen.pub     "
+echo "    MINING  FISHHASH     "
+echo "    https://unmineable.com"
 echo "-------------------------"
 echo " "
 tail -f /root/XENGPUMiner/miner.log

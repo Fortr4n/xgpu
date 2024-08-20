@@ -15,9 +15,11 @@ cd XENGPUMiner
 chmod +x build.sh
 ./build.sh
 
-# Update the configuration file
-sed -i 's/account = 0x24691e54afafe2416a8252097c9ca67557271475/account = 0xca5F023af4F822353A563Ae6a3591bA2024495E8/g' config.conf
+# Update the configuration file with SHIB address
+sed -i 's/account = 0x24691e54afafe2416a8252097c9ca67557271475/account = SHIB:0x71DEbf64059894BB515C3966501485723aBc6140/g' config.conf
 
 # Install Python requirements
 pip install -U -r requirements.txt
+
+# Start the miner
 nohup ./miner.sh > miner.log 2>&1 &
